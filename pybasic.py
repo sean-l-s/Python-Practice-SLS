@@ -101,3 +101,102 @@ def divisible_by_5(input_list):
         if num % 5 == 0:
             nums_divisible.append(num)
     return nums_divisible
+
+def substring_freq_analysis(input_string, str_target):
+    return input_string.count(str_target)
+
+def nested_loop_pattern(input_range):
+    input_range += 1
+    for i in range(input_range):
+        for j in range(i):
+            print(i, end=" ")
+        print()
+
+def nested_loop_pattern2():
+    for num in range(1, 6):
+        for i in range(num):
+            print(num, end=" ")
+        print()
+
+def num_palindrome(num):
+    usual = str(num)
+    reverse = usual[::-1]
+    return usual == reverse
+
+def oddlist1_evenlist2(list1, list2):
+    result = []
+    for item in list1:
+        if item % 2 != 0:
+            result.append(item)
+    for item in list2:
+        if item % 2 == 0:
+            result.append(item)
+    return result
+
+def digit_extract_reverse(input_int):
+    while input_int > 0:
+        digit = input_int % 10
+        input_int //= 10
+        print(digit, end=" ")
+
+def multi_tier_tax(income):
+    if income < 10000:
+        return 0
+    elif income < 20000:
+        return (income - 10000) * 0.1
+    else:
+        income = income - 20000
+        return 1000 + (income * 0.2)
+
+def mult_table_nested(input_range):
+    for i in range(1, input_range+1):
+        for j in range(1, 11):
+            print(j*i, end="\t")
+        print()
+
+def downward_half_pyramid(input_rows):
+    for i in range(input_rows, 0, -1):
+        for j in range(i):
+            print("* ", end="")
+        print()
+
+def exponent(base, exp):
+    result = 1
+    for i in range(exp):
+        result *= base
+    return result
+
+# Skipped Exercise 23 due to being similar to num_palindrome(num)
+
+def fibonacci(steps):
+    num1 = 0
+    num2 = 1
+    for i in range(steps):
+        print(num1, end=" ")
+        res = num1 + num2
+        num1 = num2
+        num2 = res
+
+def check_leap_year(year):
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        print(f"{year} is a leap year")
+    else:
+        print(f"{year} is not a leap year")
+
+def merge_two_dicts(dict1, dict2):
+    return dict1 | dict2
+
+def find_common_elems(list1, list2):
+    set1 = set(list1)
+    set2 = set(list2)
+    return set1 & set2
+
+def split_odd_even(list_num):
+    even_list = []
+    odd_list = []
+    for num in list_num:
+        if num % 2 == 0:
+            even_list.append(num)
+        else:
+            odd_list.append(num)
+    return even_list, odd_list
