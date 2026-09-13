@@ -232,3 +232,5 @@ def dict_of_squares(start_range, end_range):
     for i in range(start_range, end_range+1):
         square_dict[i] = i**2
     return square_dict
+
+def char_replace(): 
