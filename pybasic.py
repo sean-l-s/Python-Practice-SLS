@@ -200,3 +200,35 @@ def split_odd_even(list_num):
         else:
             odd_list.append(num)
     return even_list, odd_list
+
+def word_length_analysis(input_list):
+    for word in input_list:
+        print(f"{word} - {len(word)}", end=" ")
+
+def histogram(text):
+    word_list = text.split()
+    word_counter = {}
+    for word in word_list:
+        if word in word_counter:
+            word_counter[word] += 1
+        else:
+            word_counter[word] = 1
+    return word_counter
+
+def print_alternate_primes(limit):
+    prime_list = []
+    for i in range(2, limit+1):
+        for j in range(2, int(i**0.5)+1):
+            if i % j == 0:
+                break
+        else:
+            prime_list.append(i)
+    alt_primes = prime_list[::2]
+    print(alt_primes)
+
+
+def dict_of_squares(start_range, end_range):
+    square_dict = dict()
+    for i in range(start_range, end_range+1):
+        square_dict[i] = i**2
+    return square_dict
