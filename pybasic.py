@@ -279,3 +279,4 @@ def ext_file_word_counter(text_file):
             print(f"The file contains {word_count} words.")
     except FileNotFoundError:
         print("Error: The file {text_file} was not found.")
+
