@@ -112,8 +112,8 @@ def nested_loop_pattern(input_range):
             print(i, end=" ")
         print()
 
-def nested_loop_pattern2():
-    for num in range(1, 6):
+def nested_loop_pattern2(input_range):
+    for num in range(1, input_range+1):
         for i in range(num):
             print(num, end=" ")
         print()
@@ -233,4 +233,49 @@ def dict_of_squares(start_range, end_range):
         square_dict[i] = i**2
     return square_dict
 
-def char_replace(): 
+def char_replace_underscore(sentence, char_to_change):
+    return(sentence.replace(char_to_change, "_"))
+
+def reverse_nested_loop_pattern(input_range):
+    for num in range(input_range, 0, -1):
+        for i in range(num, 0, -1):
+            print(i, end=" ")
+        print()
+
+def digit_detection(input_string):
+    for char in input_string:
+        if char.isdigit():
+            return True
+
+def capitalize_first_letter(input_text):
+    list_words = input_text.split()
+    new_list = []
+    for word in list_words:
+        new_list.append(word.capitalize())
+    return(" ".join(new_list))
+
+def simple_countdown_timer(start_count):
+    while start_count > 0:
+        print(start_count, end=" ")
+        start_count -= 1
+    print("Blast off!")
+
+def file_creation_basic_io(): 
+    filename = "notes.txt"
+
+    with open(filename, "w") as f:
+        f.write("Hello, this is my first note.\n")
+        f.write("Python file handling is simple.\n")
+        f.write("End of file.")
+    with open(filename) as f:   # No need for "r" to read it, apparently
+        print(f.read())
+
+def ext_file_word_counter(text_file):
+    try:
+        with open(text_file, "r") as f:
+            data = f.read()
+            words = data.split()
+            word_count = len(words)
+            print(f"The file contains {word_count} words.")
+    except FileNotFoundError:
+        print("Error: The file {text_file} was not found.")
